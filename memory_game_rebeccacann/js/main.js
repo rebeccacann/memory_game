@@ -62,6 +62,10 @@ var flipCard = function() {
 
 createBoard()
 
+/* We've done it! Think about how you could take this game even further. It might be useful to add a "Reset" button to the HTML and set up an event in the JavaScript file so that the user can reset the game after playing.
+
+For an extra challenge, consider how you could keep track of and display the user's score.*/
+
 
 
  
