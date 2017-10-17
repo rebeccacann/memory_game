@@ -39,7 +39,7 @@ var checkForMatch = function() {
 }
 
 var flipCard = function() {
-    var cardId = this.getAttribute('data-id');
+    var cardId = this.getAttribute("data-id"); // Unit 11: use the getAttribute method to get the data-id attribute of the card that was just clicked and store it in a variable cardId.
     console.log("User flipped " + cards[cardId].rank);
     console.log(cards[cardId].cardImage);
     console.log(cards[cardId].suit);
@@ -49,15 +49,17 @@ var flipCard = function() {
     }
  }
 
- var createBoard = function() {
+ var createBoard = function() { // Unit 11 function (DOM)
      for (var i = 0; i < cards.length; i ++) { // loops through cards array
-        var cardElement = document.createElement("img");
-
+        var cardElement = document.createElement("img"); 
+        cardElement.setAttribute("src","images/back.png"); 
+        cardElement.setAttribute("data-id", cards[i]); // i is the index of the current element, represented by a card **
+        cardElement.addEventListener("click", flipCard); // when user clicks on card, run flipCard function
+        document.getElementById("game-board").appendChild(cardElement); // appends the card image to the div in html with the id "game-board"
      }
  }
 
- flipCard(0)
- flipCard(2)
+createBoard()
 
 
 
