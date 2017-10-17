@@ -43,13 +43,14 @@ var flipCard = function() {
     console.log("User flipped " + cards[cardId].rank);
     console.log(cards[cardId].cardImage);
     console.log(cards[cardId].suit);
-    cardsInPlay.push(cards[cardId].rank); // unit 10: pushes the name of the card, king or queen, to the cardsInPlay array.
+    cardsInPlay.push(cards[cardId].rank); // Unit 10: pushes the name of the card, king or queen, to the cardsInPlay array.
+    this.setAttribute("src", cards[cardId].cardImage); // unit 11: use the setAttribute method to update the src attribute to the image of the card that was just clicked
     if (cardsInPlay.length === 2) {
         checkForMatch();
     }
  }
 
- var createBoard = function() { // Unit 11 function (DOM)
+ var createBoard = function() { // Unit 11 (DOM)
      for (var i = 0; i < cards.length; i ++) { // loops through cards array
         var cardElement = document.createElement("img"); 
         cardElement.setAttribute("src","images/back.png"); 
